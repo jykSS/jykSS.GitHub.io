@@ -229,7 +229,32 @@
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
+      <div class="header-inner"><script>
+ function GetRandomNum(Min,Max)
+  {
+    var Range = Max - Min;
+    var Rand = Math.random();
+    return(Min + Math.round(Rand * Range));
+  }
+function setSidebarMarginTop (headerOffset) {
+    return $('#sidebar').css({ 'margin-top': headerOffset });
+  }
+ function getHeaderOffset () {
+    return $('.header-inner').height() + CONFIG.sidebar.offset;
+  }
+  window.onload=function(){
+    var subtitle = "不想混吃等死，却深陷泥潭无法自拔，仍想咸鱼翻一下身的垃圾低端程序猿。W一两愿你江南多雨带油伞。 二两愿你酷暑可以轻摇扇。 三两愿你入冬莫忘添衣衫。 四两愿你年年多聚无离散。 五两愿你无病无忧心常宽。 六两愿你无风无雨长相欢。 六两三。 余下三。 我在西北，一关接一关。 与你相隔，一山又一山。 最后只愿我，知道你平安。W君子坐而论道，少年起而行之。W言念君子，温其如玉。";
+     var mytitle = subtitle.split("W");
+     var max = mytitle.length-1;
+     var index = GetRandomNum(0,max);
+     var text = mytitle[index];
+     $("#helloTitle").html(text);
+     var headOffset = getHeaderOffset();
+     setSidebarMarginTop(headOffset);
+     //动态subtitle设置
+  }
+</script>
+<div class="site-brand-wrapper">
   <div class="site-meta">
     
 
@@ -240,7 +265,11 @@
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-    
+ 
+  
+    <p style="color:#777;font-family:STXingkai" id="helloTitle" class="site-subtitle"></p>
+  
+
     
   </div>
 
