@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[关于Hexo配置————持续更新]]></title>
+    <url>%2F2019%2F04%2F06%2F%E5%85%B3%E4%BA%8EHexo%E9%85%8D%E7%BD%AE%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%2F</url>
+    <content type="text"><![CDATA[]]></content>
+      <categories>
+        <category>Hexo Blog</category>
+      </categories>
+      <tags>
+        <tag>咫尺物</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[吃货请闭眼——北京篇]]></title>
+    <url>%2F2019%2F04%2F06%2F%E5%90%83%E8%B4%A7%E8%AF%B7%E9%97%AD%E7%9C%BC%E2%80%94%E2%80%94%E5%8C%97%E4%BA%AC%E7%AF%87%2F</url>
+    <content type="text"><![CDATA[前门大栅栏——卤煮 地址：认准大栅栏19号 推荐：卤煮 标准25+加肠10+火烧 北京市中心前门天兴居——炒肝 转着喝，不能用勺huo，配包子，不要买那地的卤煮火烧 推荐：标配二两包子一碗炒肝，17元 牛街老爆肚五香烧牛羊肉——爆肚 地址武圣路49附近（隔壁有家庆丰包子） 推荐：肚仁儿 百叶 肚领 烧饼夹牛肉 烫白菜 牛肉面 不推荐：牛肉面 炙子烤肉——烤肉刘地址：虎坊桥阡儿胡同 认准牌子 不推荐：拌萝卜皮不推荐 没必要要拌料，5元一碗 略贵 推荐：上图推荐 铜锅涮肉——聚宝源地址：牛街聚宝源 人比较多，可能排好长的队 推荐：蔬菜大拼盘 牛眼烧饼 肥牛 手切羊肉 烧烤 臭豆腐加窝头片 出来后可以再去清真超市买小吃 注意 只能用现金 饭后甜点 奶酪魏 注意 服务员脾气不好 推荐：双皮奶 杏仁豆腐 奶酪 天坛北门——老磁口豆汁店注意 不能用支付宝微信 用现金 炸酱面——顺心宅 推荐：唯一推荐就是炸酱面还有打卤面，精品炸酱面。 其余菜品都不好吃 永乐饭庄——烤鸭 地址：老城区边上 安德路67-3号（六铺炕二巷口） 推荐：烤鸭全套 椒盐鸭架子 芥末鸭掌 不推荐：茄子 宫保鸡丁 白魁老号————烧羊肉注意 只能现金 推荐：大蒜烧肚丝 烧羊肉（量少） 扒羊肉条 地址：北京市东城区交道口大街158号 门钉肉饼——宝瑞门钉肉饼 五元一个 地址：北京市东城区东四六条东口（军区总院南门口） 优点：周围可去景点 老磁器口儿豆汁儿和尹三豆汁天坛那家注意：一般人喝不了 地址：尹三豆汁：北京市东城区东晓市街176号（天坛北门向北150米马路东） 周围景点 特产————火车站还有飞机场所有特产都不推荐不推荐集合 北京烤鸭不能带，最好吃是现烤 北京果脯不要买 茯苓夹饼不要买 通州大顺斋糖火烧注意：还是得现金 推荐 糖火烧 不推荐: 江米条,牛舌头饼（没有稻香村的好吃） 北京稻香村点心六必居 、天源酱园的酱菜张一元、 吴裕泰、 正兴德 的花茶大虾酥脸谱甜品——牛街注意：甜品容易坏 种类多，好几十种]]></content>
+      <categories>
+        <category>民以食为天</category>
+      </categories>
+      <tags>
+        <tag>天子脚下的美食</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[建立备份分支]]></title>
+    <url>%2F2019%2F04%2F06%2F%E5%BB%BA%E7%AB%8B%E5%A4%87%E4%BB%BD%E5%88%86%E6%94%AF%2F</url>
+    <content type="text"><![CDATA[问题我们如果换了电脑怎么办？我们把hexo文件从一个电脑cope到另外一个电脑吗?答案肯定不是这样的，因为这里面有好多依赖包，好几万个文件呢，这样显然不合理 解决方案我们初步的解决方案是把我们的文件提交到git上，利用git来管理它，我是这样解决的： 在现有的XXX.github.io项目上创建一个分支来管理 克隆gitHub上的XXX.github.io项目的文件到本地 git clone https://github.com/yourname/xxx.github.io.git 删除文件夹里除了.git的其他所有文件 把hexo项目文件下的所有文件全部复制过来 里面应该有一个叫.gitignore的文件，如果没有就输入 touch .gitignore，创建一个 .gitignore文件里应该是这些内容 1234567.DS_Store Thumbs.db db.json *.log node_modules/ public/ .deploy*/ 创建一个叫hexo的分支并切换到这个分支上 git checkout -b hexo 提交复制过来的文件到暂存区 git add --all 提交 git commit -m &quot;新建分支资源文件&quot; 推送分支到github git push --set-upstream origin hexo 到这一步我们就基本上搞定了，以后再跟新了博客就直接 git push就可以了，hexo的操作跟以前一样不变。 三部曲123git add . #添加所有文件到暂存区git commit -m &quot;提交一篇博客&quot; #提交 git push origin hexo 新环境 今后无论什么时候想要在其他电脑上面用hexo写博客，就直接把创建的分支克隆下来，npm install安装依赖之后就可以用了。克隆分支的操作 git clone -b hexo https://github.com/yourname/xxx.github.io.git ​ 这样做完了以后，每次写完博客发布之后不要忘了还要git push把源文件推到分支上]]></content>
+      <categories>
+        <category>Hexo Blog</category>
+      </categories>
+      <tags>
+        <tag>方寸物</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[写在所有之前的话语]]></title>
+    <url>%2F2019%2F04%2F06%2F%E5%86%99%E5%9C%A8%E6%89%80%E6%9C%89%E4%B9%8B%E5%89%8D%E7%9A%84%E8%AF%9D%E8%AF%AD%2F</url>
+    <content type="text"><![CDATA[]]></content>
+      <categories>
+        <category>宰相一肚皮</category>
+      </categories>
+      <tags>
+        <tag>言念君子 温其如玉</tag>
+      </tags>
+  </entry>
+</search>
